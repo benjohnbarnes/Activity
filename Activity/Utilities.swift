@@ -3,9 +3,20 @@
 //
 
 /*
+ # Issues
+ 
+ `just` and `transform` might not be great names as they're likely to colide. They can be clarified by
+ prefixing the module name though?
+ 
  Handling of processing and completion queues could be greatly improved I think. Similarly the zip queue.
  
- `just` and `transform` have bad names – they're too used.
+ I tried returning `some Activity` from the utility functions to make implementation opaque. This made
+ Swift's compiler crash.
+
+ I'm using `AnyActivity` in utility implementations here which might not be ideal. It'd probably be preferable to
+ build private `struct`s conforming to `Activity` and return those from the utility functions.
+ 
+ 
  */
 
 import Dispatch
